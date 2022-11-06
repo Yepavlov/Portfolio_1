@@ -1,0 +1,9 @@
+Seller: Rozetka, other sellers
+Brand: Apple, Motorola, Nokia, OPPO, Samsung, Xiaomi
+Price: 82, 150500, 326394
+Screen diagonal: 4.1-4.5, 6-6.49, 4
+rAM: 2, 10, 32
+Built-in memory: 16, 128, 1TB
+Processor: Apple Ax, Mediatek, Qualcomm Snapdragon
+Operating systen: Android, Windows Phone 8.1, IOS
+Country of Manufacturer: China, USA

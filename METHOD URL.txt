@@ -1,0 +1,28 @@
+GET   http://151.80.70.42:3000/
+POST  http://151.80.70.42:3000/api/users
+PUT  http://151.80.70.42:3000/api/users/131
+DELETE  http://151.80.70.42:3000/api/users/131
+HEAD http://151.80.70.42:3000/api/users
+
+
+
+Вот методы которые поддерживает этот сервер:
+C:\Users\User>curl -v -X OPTIONS http://151.80.70.42:3000/api/users
+*   Trying 151.80.70.42:3000...
+* Connected to 151.80.70.42 (151.80.70.42) port 3000 (#0)
+> OPTIONS /api/users HTTP/1.1
+> Host: 151.80.70.42:3000
+> User-Agent: curl/7.83.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< X-Powered-By: Express
+< Allow: GET,HEAD,POST,PUT,DELETE
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 24
+< ETag: W/"18-L6leKwAr6MxwuzMvVSON1A"
+< Date: Wed, 24 Aug 2022 10:28:33 GMT
+< Connection: keep-alive
+<
+GET,HEAD,POST,PUT,DELETE* Connection #0 to host 151.80.70.42 left intact

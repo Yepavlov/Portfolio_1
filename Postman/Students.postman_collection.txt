@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "701a9b2e-f774-4534-9b65-24f0993857a5",
+		"name": "Students",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23021366"
+	},
+	"item": [
+		{
+			"name": "AddContact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Glory\",\r\n    \"phone\": \"123456789\",\r\n    \"role\": \"Student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://151.80.70.42:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"151",
+						"80",
+						"70",
+						"42"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMaxId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var Arr = jsonData.length;\r",
+							"    var maxID = Math.max(...jsonData.map(o => o.id));\r",
+							"\r",
+							"    pm.collectionVariables.set(\"maxID\", maxID);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://151.80.70.42:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"151",
+						"80",
+						"70",
+						"42"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckContact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{maxID}},\r\n    \"name\": \"Glorys\",\r\n    \"phone\": \"123456789\",\r\n    \"role\": \"Student\",\r\n    \"strikes\": \"1\",\r\n    \"location\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://151.80.70.42:3000/api/users/{{maxID}}",
+					"protocol": "http",
+					"host": [
+						"151",
+						"80",
+						"70",
+						"42"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{maxID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteContact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{maxID}},\r\n    \"name\": \"Glorys\",\r\n    \"phone\": \"123456789\",\r\n    \"role\": \"Student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://151.80.70.42:3000/api/users/{{maxID}}",
+					"protocol": "http",
+					"host": [
+						"151",
+						"80",
+						"70",
+						"42"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{maxID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckDeleteContact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{maxID}},\r\n    \"name\": \"Glorys\",\r\n    \"phone\": \"123456789\",\r\n    \"role\": \"Student\",\r\n    \"strikes\": \"1\",\r\n    \"location\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://151.80.70.42:3000/api/users/{{maxID}}",
+					"protocol": "http",
+					"host": [
+						"151",
+						"80",
+						"70",
+						"42"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{maxID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "maxID",
+			"value": ""
+		}
+	]
+}

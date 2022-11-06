@@ -1,0 +1,64 @@
+curl -v -X POST -H "Content-Type: application/json" -d "{\"name\":\"Lost\",\"phone\":\"11111\",\"role\":\"Student\"}" http://151.80.70.42:3000/api/users
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 151.80.70.42:3000...
+* Connected to 151.80.70.42 (151.80.70.42) port 3000 (#0)
+> POST /api/users HTTP/1.1
+> Host: 151.80.70.42:3000
+> User-Agent: curl/7.83.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 48
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< X-Powered-By: Express
+< Content-Type: application/json; charset=utf-8
+< Access-Control-Allow-Origin: *
+< Content-Length: 57
+< ETag: W/"39-OIeGzNIxsmPgnj0QNh2Fbg"
+< Date: Wed, 24 Aug 2022 10:38:50 GMT
+< Connection: keep-alive
+<
+{"name":"Lost","phone":"11111","role":"Student","id":131}* Connection #0 to host 151.80.70.42 left intact
+
+
+curl -v -X DELETE -H "Content-Type: application/json"  http://151.80.70.42:3000/api/users/131
+*   Trying 151.80.70.42:3000...
+* Connected to 151.80.70.42 (151.80.70.42) port 3000 (#0)
+> DELETE /api/users/131 HTTP/1.1
+> Host: 151.80.70.42:3000
+> User-Agent: curl/7.83.1
+> Accept: */*
+> Content-Type: application/json
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 204 No Content
+< X-Powered-By: Express
+< Content-type: application/json
+< Date: Wed, 24 Aug 2022 10:41:24 GMT
+< Connection: keep-alive
+<
+* Connection #0 to host 151.80.70.42 left intact
+
+
+curl -v -X PUT -H "Content-Type: application/json" -d "{\"id\":131,\"name\":\"Loster\",\"phone\":\"11111\",\"role\":\"Student\",\"strikes\":\"1\",\"location\":\"\"}"  http://151.80.70.42:3000/api/users/131  
+*   Trying 151.80.70.42:3000...
+* Connected to 151.80.70.42 (151.80.70.42) port 3000 (#0)
+> PUT /api/users/131 HTTP/1.1
+> Host: 151.80.70.42:3000
+> User-Agent: curl/7.83.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 87
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 204 No Content
+< X-Powered-By: Express
+< Content-type: application/json
+< Date: Wed, 24 Aug 2022 10:39:28 GMT
+< Connection: keep-alive
+<
+* Connection #0 to host 151.80.70.42 left intact
+
+
+curl -v http://151.80.70.42:3000/api/users

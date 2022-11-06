@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "ef60de9a-37d7-4f89-a2fc-8179cdc0f3f0",
+		"name": "Qavto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23021366"
+	},
+	"item": [
+		{
+			"name": "LogIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ff2-15@ukr.net\",\r\n    \"password\": \"Pavlov1989\",\r\n    \"remember\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/auth/signin",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrandCarId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var ArrBrandId = jsonData.data.length;\r",
+							"    var RandomBrandId = Math.floor(Math.random() * ArrBrandId);\r",
+							"\r",
+							"    var BrandCarId = jsonData.data[RandomBrandId].id;\r",
+							"\r",
+							"    pm.collectionVariables.set(\"RandomBrandCarId\", BrandCarId);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars/brands",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars",
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCarModelId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var ModelArr = jsonData.data.length;\r",
+							"    var RandomModelId = Math.floor(Math.random() * ModelArr);\r",
+							"    var RandomCarModel = jsonData.data[RandomModelId].id;\r",
+							"\r",
+							"pm.collectionVariables.set(\"CarModel\", RandomCarModel);\r",
+							"    \r",
+							"    \r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars/models?carBrandId={{RandomBrandCarId}}",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars",
+						"models"
+					],
+					"query": [
+						{
+							"key": "carBrandId",
+							"value": "{{RandomBrandCarId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.log(jsonData.data.id);\r",
+							"    pm.collectionVariables.set(\"CarId\", jsonData.data.id);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carBrandId\": {{RandomBrandCarId}},\r\n    \"carModelId\": {{CarModel}},\r\n    \"mileage\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Expense",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carId\": {{CarId}},\r\n    \"reportedAt\": \"2022-09-07T00:00:00.000Z\",\r\n    \"mileage\": 330,\r\n    \"liters\": 30,\r\n    \"totalCost\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/expenses",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetExpenses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var maxMil = Math.max(...jsonData.data.map(o => o.mileage));\r",
+							"    console.log(maxMil)    \r",
+							"    pm.collectionVariables.set(\"maxMil\", maxMil);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/expenses?carId={{CarId}}",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					],
+					"query": [
+						{
+							"key": "carId",
+							"value": "{{CarId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Expense Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var Mil = pm.collectionVariables.get(\"maxMil\");\r",
+							"pm.collectionVariables.set(\"Mil\", Mil + 30);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carId\": {{CarId}},\r\n    \"reportedAt\": \"2022-09-07T00:00:00.000Z\",\r\n    \"mileage\": {{Mil}},\r\n    \"liters\": 30,\r\n    \"totalCost\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/expenses",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "RandomBrendId",
+			"value": ""
+		},
+		{
+			"key": "RandomBrandId",
+			"value": ""
+		},
+		{
+			"key": "BrandCarId",
+			"value": ""
+		},
+		{
+			"key": "RandomBrandCarId",
+			"value": ""
+		},
+		{
+			"key": "CarModel",
+			"value": ""
+		},
+		{
+			"key": "CarId",
+			"value": ""
+		},
+		{
+			"key": "maxMil",
+			"value": ""
+		},
+		{
+			"key": "currentMil",
+			"value": ""
+		},
+		{
+			"key": "CurrentMil",
+			"value": ""
+		},
+		{
+			"key": "MaxMil",
+			"value": ""
+		},
+		{
+			"key": "Mil",
+			"value": ""
+		}
+	]
+}

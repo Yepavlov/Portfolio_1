@@ -1,0 +1,24 @@
+Seller	Brand	Price	Screen diagonal	rAM	Built-in memory	Processor	Operating systen	Country of Manufacturer
+Rozetka	Nokia	82	6-6.49	32	1TB	Apple Ax	Windows Phone 8.1	China
+other sellers	Apple	82	4.1-4.5	10	16	Mediatek	Android	USA
+other sellers	OPPO	150500	4	2	128	Apple Ax	IOS	USA
+Rozetka	Motorola	326394	6-6.49	2	1TB	Qualcomm Snapdragon	Android	USA
+other sellers	Apple	326394	4	32	1TB	Mediatek	IOS	China
+Rozetka	Apple	150500	4.1-4.5	10	128	Apple Ax	Android	China
+other sellers	Samsung	150500	4.1-4.5	2	16	Qualcomm Snapdragon	Windows Phone 8.1	China
+Rozetka	Motorola	82	4.1-4.5	32	128	Qualcomm Snapdragon	IOS	China
+Rozetka	OPPO	326394	4	10	16	Qualcomm Snapdragon	Windows Phone 8.1	China
+Rozetka	Samsung	150500	4	32	128	Mediatek	Android	USA
+other sellers	Motorola	82	4	2	128	Mediatek	Windows Phone 8.1	USA
+other sellers	Samsung	150500	6-6.49	10	1TB	Apple Ax	IOS	China
+other sellers	Samsung	326394	4.1-4.5	32	16	Apple Ax	IOS	China
+Rozetka	Motorola	150500	6-6.49	10	16	Apple Ax	Android	China
+Rozetka	OPPO	82	4.1-4.5	32	1TB	Mediatek	Android	USA
+other sellers	Nokia	326394	4.1-4.5	2	128	Qualcomm Snapdragon	Android	USA
+other sellers	Xiaomi	82	6-6.49	10	128	Mediatek	Android	USA
+other sellers	OPPO	326394	6-6.49	2	16	Mediatek	IOS	USA
+Rozetka	Xiaomi	326394	4	32	1TB	Qualcomm Snapdragon	IOS	China
+other sellers	Xiaomi	150500	4.1-4.5	2	16	Apple Ax	Windows Phone 8.1	China
+Rozetka	Nokia	150500	4	10	16	Mediatek	IOS	China
+Rozetka	Samsung	82	6-6.49	32	1TB	Qualcomm Snapdragon	Windows Phone 8.1	USA
+other sellers	Apple	326394	6-6.49	2	16	Qualcomm Snapdragon	Windows Phone 8.1	China

@@ -1,0 +1,53 @@
+{
+"Mobile phones": 
+[
+{
+		"Brand":"Apple",
+		"Price":1200,
+		"Screen diagonal":6.5,
+		"RAM":8,
+		"Processor":"Apple Ax",
+		"New":true
+		},
+		{
+		"Brand":"Motorola",
+		"Price":900,
+		"Screen diagonal":6.3,
+		"RAM":4,
+		"Processor":"Mediatek",
+		"New":false
+		},
+		{
+		"Brand":"Nokia",
+		"Price":850,
+		"Screen diagonal":6.2,
+		"RAM":6,
+		"Processor":"Mediatek",
+		"New":false
+		},
+		{
+		"Brand":"OPPO",
+		"Price":650,
+		"Screen diagonal":6.1,
+		"RAM":4,
+		"Processor":"Qualcomm Snapdragon",
+		"New":true
+		},
+		{
+		"Brand":"Samsung",
+		"Price":1000,
+		"Screen diagonal":6.0,
+		"RAM":8,
+		"Processor":"Qualcomm Snapdragon",
+		"New":true
+		},
+		{
+		"Brand":"Xiaomi",
+		"Price":925,
+		"Screen diagonal":5.7,
+		"RAM":6,
+		"Processor":"Qualcomm Snapdragon",
+		"New":false
+		}
+	]
+}
